@@ -1,3 +1,7 @@
+.menu {
+  margin-top: 20px;
+}
+
 .menu-item {
   margin-bottom: 10px;
   height: 200px;
@@ -23,7 +27,7 @@
     height: 100%;
 
     &:hover {
-      @include box-shadow(rgba(0, 0, 0, 0.5) 0px 1px 3px);
+//      @include box-shadow(rgba(0, 0, 0, 0.5) 0px 1px 3px);
     }
 
     h4 {
