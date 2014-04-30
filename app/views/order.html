@@ -1,0 +1,25 @@
+<div class="jumbotron">
+    <h1>Order</h1>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="order">
+            <h2>{{item.name}}</h2>
+
+            <price price="{{item.price}}"></price>
+
+            <p>
+                {{item.description}}
+            </p>
+
+            <ul>
+                <li ng-repeat="opt in item.options">
+                    {{opt.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+

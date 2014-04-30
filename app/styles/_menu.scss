@@ -1,0 +1,38 @@
+.menu-item {
+  margin-bottom: 10px;
+  height: 200px;
+  &.ng-enter, &.ng-move {
+    @include transition(all 0.3s ease-in-out);
+    opacity: 0;
+  }
+
+  &.ng-enter.ng-enter-active,
+  &.ng-move.ng-move-active {
+    opacity: 1;
+  }
+
+  &.ng-leave {
+    -webkit-animation:0.5s fade;
+    -moz-animation:0.5s fade;
+    -o-animation:0.5s fade;
+    animation:0.5s fade;
+  }
+
+  .menu-item-info {
+    padding: 5px;
+    height: 100%;
+
+    &:hover {
+      @include box-shadow(rgba(0, 0, 0, 0.5) 0px 1px 3px);
+    }
+
+    h4 {
+      margin: 0;
+    }
+  }
+}
+
+@include keyframes(fade) {
+  0% { opacity:1; }
+  100% { opacity:0; }
+}
