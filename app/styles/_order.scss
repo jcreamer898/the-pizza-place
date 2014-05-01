@@ -1,0 +1,19 @@
+.order-options {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order .multiselect-container > li > a {
+  padding: 3px 20px;
+}
+
+.order {
+  .form-group {
+    margin-top: 5px;
+  }
+
+  .add-to-order {
+    margin-top: 10px;
+  }
+}

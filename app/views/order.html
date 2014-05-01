@@ -13,11 +13,25 @@
                 {{item.description}}
             </p>
 
-            <ul>
-                <li ng-repeat="opt in item.options">
-                    {{opt.name}}
-                </li>
-            </ul>
+            <button class="btn btn-danger" ng-click="addItem()">Add Item</button>
+
+            <div ng-if="order.length">
+                <h3>Order Item</h3>
+                <ul class="order-options">
+                    <li ng-repeat="orderItem in order">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <input id="qty" type="text" class="form-control" ng-value="{{orderItem.qty}}" />
+                            </div>
+                            <div class="form-group">
+                                <multiselect items="item.options" selected="orderItem.options"></multiselect>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="btn btn-primary add-to-order" ng-if="order.length" ng-click="addToCart()">Add {{totalItems}} items to Order</button>
         </div>
     </div>
 </div>

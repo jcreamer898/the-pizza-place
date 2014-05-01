@@ -11,11 +11,14 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-multiselect/css/bootstrap-multiselect.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="bower_components/bootstrap-multiselect/css/bootstrap-multiselect.css" type="text/css" />
   </head>
   <body ng-app="introToAngularApp">
     <!--[if lt IE 7]>
@@ -71,6 +74,9 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/postal.js/lib/postal.min.js"></script>
+    <script src="bower_components/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -84,6 +90,10 @@
         <script src="scripts/directives/menu-item.js"></script>
         <script src="scripts/controllers/order.js"></script>
         <script src="scripts/directives/price.js"></script>
+        <script src="scripts/services/bus.js"></script>
+        <script src="scripts/decorators/busdecorator.js"></script>
+        <script src="scripts/controllers/cart.js"></script>
+        <script src="scripts/directives/multiselect.js"></script>
         <!-- endbuild -->
 </body>
 </html>
