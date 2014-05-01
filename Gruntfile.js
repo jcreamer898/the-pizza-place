@@ -333,7 +333,9 @@ module.exports = function (grunt) {
                             '*.{ico,png,txt}',
                             '.htaccess',
                             '*.html',
-                            'views/{,*/}*.html',
+                            'templates/{,*/}*.html',
+                            'views/{w,*/}*.html',
+                            'server/*',
                             'images/{,*/}*.{webp}',
                             'fonts/*'
                         ]
@@ -343,6 +345,12 @@ module.exports = function (grunt) {
                         cwd: '.tmp/images',
                         dest: '<%= yeoman.dist %>/images',
                         src: ['generated/*']
+                    },
+                    {
+                        expand:true,
+                        cwd: '<%= yeoman.app %>/bower_components/bootstrap/dist',
+                        src: 'fonts/*',
+                        dest: '<%= yeoman.dist %>'
                     }
                 ]
             },

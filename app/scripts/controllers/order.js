@@ -4,12 +4,12 @@ function OrderController($scope, $routeParams, $location, Menu) {
     var orderId = $routeParams.id;
 
     $scope.order = [];
-    $scope.totalItems = 0;
-    $scope.$watchCollection('order', function() {
+    $scope.totalItems = 1;
+    $scope.calculateTotal = function() {
         $scope.totalItems = $scope.order.reduce(function(memo, o) {
-            return memo + o.qty;
+            return memo + parseInt(o.qty, 10);
         }, 0);
-    });
+    };
 
     $scope.addItem = function() {
         $scope.order.push({
