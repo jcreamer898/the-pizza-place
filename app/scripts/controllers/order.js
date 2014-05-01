@@ -23,9 +23,7 @@ function OrderController($scope, $routeParams, $location, Menu) {
         $scope.$bus.publish({
             channel: 'orders',
             topic: 'order.new',
-            data: {
-                id: orderId
-            }
+            data: $scope.order.slice(0)
         });
     };
 
