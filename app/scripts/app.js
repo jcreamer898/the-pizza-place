@@ -15,8 +15,7 @@ angular
                 controller: 'MainCtrl'
             })
             .when('/menu', {
-                templateUrl: 'views/menu.html',
-                controller: 'MenuCtrl'
+                templateUrl: 'views/menu.html'
             })
             .when('/menu/:id', {
                 templateUrl: 'views/order.html',

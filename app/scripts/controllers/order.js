@@ -1,34 +1,41 @@
 'use strict';
 
-function OrderController($scope, $routeParams, $location, Menu) {
-    var orderId = $routeParams.id;
+function OrderController($scope, $routeParams, $location, Menu, Order) {
+    $scope.itemId = $routeParams.id;
 
-    $scope.order = [];
-    $scope.totalItems = 1;
-    $scope.calculateTotal = function() {
-        $scope.totalItems = $scope.order.reduce(function(memo, o) {
-            return memo + parseInt(o.qty, 10);
-        }, 0);
+    $scope.order = Order.order;
+    $scope.totalItems = Order.calculateTotalItems();
+
+    $scope.isItem = function(item) {
+        return item.id === +$scope.itemId;
     };
 
     $scope.addItem = function() {
-        $scope.order.push({
+        Order.addToOrder({
             name: $scope.item.name,
             qty: 1,
-            options: []
+            options: [],
+            id: $scope.item.id
+        });
+
+        $scope.calculateTotal();
+    };
+
+    $scope.calculateTotal = function() {
+        $scope.totalItems = Order.calculateTotalItems();
+
+        $scope.$bus.publish({
+            channel: 'orders',
+            topic: 'order.new'
         });
     };
 
-    $scope.addToCart = function() {
-        $scope.$bus.publish({
-            channel: 'orders',
-            topic: 'order.new',
-            data: $scope.order.slice(0)
-        });
+    $scope.removeItem = function(item) {
+        Order.removeFromOrder(item);
     };
 
     Menu.get({
-            itemId: orderId
+            itemId: $scope.itemId
         })
         .$promise
         .then(function(item){
@@ -41,11 +48,5 @@ function OrderController($scope, $routeParams, $location, Menu) {
         });
 }
 
-OrderController.$inject = [
-    '$scope',
-    '$routeParams',
-    '$location',
-    'Menu'
-];
 angular.module('introToAngularApp')
     .controller('OrderCtrl', OrderController);

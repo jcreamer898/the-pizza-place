@@ -1,16 +1,18 @@
-<div class="jumbotron">
-    <h1>Menu</h1>
-</div>
+<section ng-controller="MenuCtrl">
+    <div class="jumbotron">
+        <h1>Menu</h1>
+    </div>
 
-<h1>Our authentic Italian menu</h1>
+    <h1>Our authentic Italian menu</h1>
 
-<label>
-    Search our menu:
-</label>
-<input type="text" placeholder="e.g. pizza, spaghetti" ng-model="query" />
+    <label>
+        Search our menu:
+    </label>
+    <input type="text" placeholder="e.g. pizza, spaghetti" ng-model="query" />
 
-<hr />
+    <hr />
 
-<ul class="menu row">
-    <menu-item ng-repeat="item in items | filter: query" item="item"></menu-item>
-</ul>
+    <ul class="menu row">
+        <menu-item ng-repeat="item in items | filter: query" item="item"></menu-item>
+    </ul>
+</section>

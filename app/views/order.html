@@ -14,24 +14,28 @@
             </p>
 
             <button class="btn btn-danger" ng-click="addItem()">Add Item</button>
+            <a class="btn btn-primary" ng-href="#/menu">Back to Menu</a>
 
-            <div ng-if="order.length">
-                <h3>Order Item</h3>
-                <ul class="order-options">
-                    <li ng-repeat="orderItem in order">
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <input id="qty" type="text" class="form-control" ng-model="orderItem.qty" ng-change="calculateTotal()" />
-                            </div>
-                            <div class="form-group">
-                                <multiselect items="item.options" selected="orderItem.options"></multiselect>
-                            </div>
+            <hr />
+
+            <ul class="order-options">
+                <li ng-repeat="orderItem in order | filter: isItem">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <input id="qty" type="text" class="form-control" ng-model="orderItem.qty" ng-change="calculateTotal()" />
                         </div>
-                    </li>
-                </ul>
-            </div>
+                        <div class="form-group">
+                            <multiselect items="item.options" selected="orderItem.options"></multiselect>
+                        </div>
+                        <div class="form-group">
+                            <a class="btn btn-danger" ng-click="removeItem(orderItem)">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
 
-            <button class="btn btn-primary add-to-order" ng-if="order.length" ng-click="addToCart()">Add {{totalItems}} items to Order</button>
         </div>
     </div>
 </div>

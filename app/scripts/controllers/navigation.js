@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('introToAngularApp')
-    .controller('NavController', ['$scope', function($scope) {
+    .controller('NavController', function($scope) {
         $scope.items = [{
             href: '/',
             title: 'Home',
@@ -15,4 +15,4 @@ angular.module('introToAngularApp')
             title: 'Contact',
             order: 2
         }];
-    }]);
+    });
