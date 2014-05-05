@@ -115,6 +115,12 @@ footer {
   background-color: #d43f3a;
 }
 
+.header {
+  .nav {
+    margin-right: 20px;
+  }
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

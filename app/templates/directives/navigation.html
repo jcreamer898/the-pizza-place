@@ -7,7 +7,7 @@
     </div>
 
     <ul class="nav nav-pills pull-right">
-        <li ng-repeat="item in items">
+        <li ng-repeat="item in items | orderBy: 'order'" ng-class="{ active: item.active }">
             <a ng-href="#{{item.href}}">{{item.title}}</a>
         </li>
     </ul>

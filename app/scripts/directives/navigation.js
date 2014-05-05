@@ -4,9 +4,7 @@ angular.module('introToAngularApp')
     .directive('navigation', function () {
         return {
             restrict: 'E',
-            scope: {
-                items: '='
-            },
-            templateUrl: '/templates/directives/navigation.html'
+            templateUrl: '/templates/directives/navigation.html',
+            scope: true
         };
     });

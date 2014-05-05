@@ -1,11 +1,11 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="introToAngularApp" ng-controller="AppCtrl"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="introToAngularApp" ng-controller="AppCtrl"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="introToAngularApp" ng-controller="AppCtrl"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="introToAngularApp"  ng-controller="AppCtrl"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>The Pizza Place</title>
+    <title>{{'The Pizza Place ' + page.title}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -19,16 +19,16 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="introToAngularApp">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-controller="NavController">
-        <navigation items="items"></navigation>
+    <div class="container">
+        <navigation items="items" ng-controller="NavCtrl"></navigation>
 
-        <section id="main" ng-view=""></section>
+        <section id="main" ng-view></section>
     </div>
 
     <footer class="navbar footer navbar-fixed-bottom">
@@ -71,18 +71,20 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/services/menu.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/menu.js"></script>
-        <script src="scripts/controllers/navigation.js"></script>
+        <script src="scripts/controllers/mainCtrl.js"></script>
+        <script src="scripts/controllers/appCtrl.js"></script>
+        <script src="scripts/controllers/menuCtrl.js"></script>
+        <script src="scripts/controllers/navigationCtrl.js"></script>
         <script src="scripts/directives/navigation.js"></script>
         <script src="scripts/directives/menu-item.js"></script>
-        <script src="scripts/controllers/order.js"></script>
+        <script src="scripts/controllers/orderCtrl.js"></script>
         <script src="scripts/directives/price.js"></script>
         <script src="scripts/services/bus.js"></script>
         <script src="scripts/decorators/busdecorator.js"></script>
-        <script src="scripts/controllers/cart.js"></script>
+        <script src="scripts/controllers/cartCtrl.js"></script>
         <script src="scripts/directives/multiselect.js"></script>
         <script src="scripts/services/order.js"></script>
+        <script src="scripts/models/routesModel.js"></script>
         <!-- endbuild -->
 </body>
 </html>
