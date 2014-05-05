@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('introToAngularApp')
-    .directive('menuItem', function () {
+    .directive('tppMenuItem', function () {
         return {
             templateUrl: '/templates/directives/menuItem.html',
             restrict: 'E',

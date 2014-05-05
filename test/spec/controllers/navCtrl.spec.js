@@ -50,4 +50,12 @@ describe('Controller: NavCtrl', function () {
         scope.$emit('$locationChangeSuccess');
         expect(scope.items[1].active).toBeTruthy();
     });
+
+    it('should do async', function(done) {
+        setTimeout(function() {
+            expect(true).toBeTruthy();
+            done();
+        }, 10   );
+    });
+
 });

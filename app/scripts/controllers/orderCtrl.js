@@ -32,6 +32,8 @@ function OrderController($scope, $routeParams, $location, Menu, Order) {
 
     $scope.removeItem = function(item) {
         Order.removeFromOrder(item);
+
+        $scope.calculateTotal();
     };
 
     Menu.get({

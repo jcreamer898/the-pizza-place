@@ -1,18 +1,18 @@
-<section ng-controller="MenuCtrl">
+<section ng-controller="MenuCtrl as menu">
     <div class="jumbotron">
         <h1>Menu</h1>
     </div>
 
     <h1>Our authentic Italian menu</h1>
 
-    <label>
+    <label label="menu-search-label label">
         Search our menu:
     </label>
-    <input type="text" placeholder="e.g. pizza, spaghetti" ng-model="query" />
+    <input type="text" placeholder="e.g. pizza, spaghetti" ng-model="query" class="form-control" />
 
     <hr />
 
     <ul class="menu row">
-        <menu-item ng-repeat="item in items | filter: query" item="item"></menu-item>
+        <tpp-menu-item ng-repeat="item in menu.items | filter: query" item="item"></tpp-menu-item>
     </ul>
 </section>

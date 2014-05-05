@@ -13,7 +13,7 @@ describe('Directive: navigation', function () {
     }));
 
     it('should make hidden element visible', inject(function ($compile) {
-        element = angular.element('<navigation></navigation>');
+        element = angular.element('<tpp-navigation></tpp-navigation>');
         element = $compile(element)(scope);
         expect(1).toBeTruthy();
     }));

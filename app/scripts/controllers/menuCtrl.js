@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('introToAngularApp')
-    .controller('MenuCtrl', function ($scope, Menu) {
-        $scope.items = Menu.query();
+    .controller('MenuCtrl', function (Menu) {
+        this.items = Menu.query();
     });

@@ -13,7 +13,7 @@ describe('Directive: menuItem', function () {
     }));
 
     it('should make hidden element visible', inject(function ($compile) {
-        element = angular.element('<menu-item></menu-item>');
+        element = angular.element('<tpp-menu-item></tpp-menu-item>');
         element = $compile(element)(scope);
         expect(1).toBeTruthy();
     }));
