@@ -2,12 +2,12 @@
     <div class="cart pull-right" ng-controller="CartCtrl">
         <a class="btn btn-primary">
             <span class="glyphicon glyphicon-shopping-cart"></span>
-            {{cartItems.length}}
+            {{totalItems}}
         </a>
     </div>
 
     <ul class="nav nav-pills pull-right">
-        <li ng-repeat="item in items">
+        <li ng-repeat="item in items | orderBy: 'order'" ng-class="{ active: item.active }">
             <a ng-href="#{{item.href}}">{{item.title}}</a>
         </li>
     </ul>
