@@ -334,7 +334,7 @@ module.exports = function (grunt) {
                             '.htaccess',
                             '*.html',
                             'templates/{,*/}*.html',
-                            'views/{w,*/}*.html',
+                            'views/{,*/}*.html',
                             'server/*',
                             'images/{,*/}*.{webp}',
                             'fonts/*'
