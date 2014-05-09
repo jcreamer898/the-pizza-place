@@ -13,12 +13,16 @@ angular.module('introToAngularApp')
                 }).
                 filter(function(item) {
                     if ($location.path() === item.href ||
-                        ($location.path().split('/')[1].indexOf(item.href) > -1)) {
+                        (item.href !== '/' && $location.path().indexOf(item.href) > -1)) {
                         return item;
                     }
                 })[0];
 
             route.active = true;
+        };
+
+        $scope.isNav = function(item) {
+            return !!item.text;
         };
 
         $rootScope.$on('$locationChangeSuccess', updateRoute);

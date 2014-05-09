@@ -16,6 +16,11 @@
         controllerAs: 'menu',
         order: 1
     }, {
+        href: '/menu/:id',
+        title: 'Order',
+        templateUrl: 'views/order.html',
+        controller: 'OrderCtrl'
+    }, {
         href: '/contact',
         text: 'Contact',
         title: 'Contact Us',
