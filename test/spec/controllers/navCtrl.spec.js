@@ -55,7 +55,7 @@ describe('Controller: NavCtrl', function () {
         setTimeout(function() {
             expect(true).toBeTruthy();
             done();
-        }, 10   );
+        }, 10 );
     });
 
 });

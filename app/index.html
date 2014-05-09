@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" ng-app="introToAngularApp"  ng-controller="AppCtrl"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>{{'The Pizza Place ' + page.title}}</title>
+    <title ng-bind="'The Pizza Place ' + page.title"></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -78,7 +78,6 @@
         <script src="scripts/directives/navigation.js"></script>
         <script src="scripts/directives/menu-item.js"></script>
         <script src="scripts/controllers/orderCtrl.js"></script>
-        <script src="scripts/directives/price.js"></script>
         <script src="scripts/services/bus.js"></script>
         <script src="scripts/decorators/busdecorator.js"></script>
         <script src="scripts/controllers/cartCtrl.js"></script>

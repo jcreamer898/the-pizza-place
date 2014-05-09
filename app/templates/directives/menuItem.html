@@ -1,7 +1,7 @@
 <div class="col-md-4 col-sm-4 menu-item">
     <div class="menu-item-info">
         <h4>{{item.name}}</h4>
-        <small>{{item.price}}</small>
+        <small>{{item.price | currency}}</small>
         <p>{{item.description}}</p>
         <a ng-href="#/menu/{{item.id}}">Order</a>
     </div>
