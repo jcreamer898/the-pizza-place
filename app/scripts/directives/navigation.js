@@ -5,6 +5,10 @@ angular.module('introToAngularApp')
         return {
             restrict: 'E',
             templateUrl: '/templates/directives/navigation.html',
-            scope: true
+            replace: true,
+            controller: "NavCtrl",
+            link: function(scope, element) {
+                console.log(element);
+            }
         };
     });

@@ -19,7 +19,6 @@ angular.module('introToAngularApp')
                 })[0];
 
             route.active = true;
-            $scope.page.title = route.title;
         };
 
         $rootScope.$on('$locationChangeSuccess', updateRoute);
